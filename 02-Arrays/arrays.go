@@ -1,12 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	var x [2]int           //declare array of two elements
 	var y = [2]int{3, 5}   //declare and initialize
 	var z = [...]int{3, 5} //length is inferred
 	var w = [...]string{"Hello", "World"}
+
+	var max [math.MaxInt32]int
 
 	fmt.Printf("x[0] = %v x[1] = %v\n", x[0], x[1])
 	//compile time error
@@ -17,4 +22,10 @@ func main() {
 	fmt.Printf("z[0] = %v z[1] = %v\n", z[0], z[1])
 
 	fmt.Printf("%v", w)
+
+	x[0] = 100
+	max[12345] = 100
+
+	fmt.Printf("%d\n", max[0])
+
 }
