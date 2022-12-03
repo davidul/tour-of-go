@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	//declare a variable
@@ -16,15 +19,11 @@ func main() {
 	var x int = 10 //declare and initialize
 	var e, f, g int = 4, 4, 4
 	z := 1 //declare, initialize and infer type
-
+	fmt.Printf("%d %d %d %d %d \n", x, e, f, g, z)
 	h, i := 10, "Hello" //infer different types
-
+	fmt.Printf("%d %s \n", h, i)
 	y = 2
-	fmt.Println("y2 = ", y)
-	fmt.Println(x)
-	fmt.Println(e, f, g)
-	fmt.Println(z)
-	fmt.Println(h, i)
+	fmt.Printf("y = %d \n", y)
 
 	//declaration in block
 	var (
@@ -44,4 +43,29 @@ func main() {
 
 	const name = 3
 	//name = 4 -> Error
+
+	integers()
+}
+
+func integers() {
+	var a int8 = 1
+	var b int16 = 2
+	var c int32 = 3
+	var d int64 = 4
+	fmt.Printf(" %d %d %d %d \n", a, b, c, d)
+	fmt.Printf("max int = %d , min int = %d \n", math.MaxInt, math.MinInt)
+	fmt.Printf("max int8 = %d , min int8 = %d \n", math.MaxInt8, math.MinInt8)
+	fmt.Printf("max int16 = %d , min int16 = %d \n", math.MaxInt16, math.MinInt16)
+	fmt.Printf("max int32 = %d , min int32 = %d \n", math.MaxInt32, math.MinInt32)
+	fmt.Printf("max int64 = %d , min int64 = %d \n", math.MaxInt64, math.MinInt64)
+
+	fmt.Printf("max unit8 = %d, min uint8 = %d\n", math.MaxUint8, 0)
+	fmt.Printf("max unit16 = %d, min uint16 = %d\n", math.MaxUint16, 0)
+	fmt.Printf("max unit32 = %d, min uint32 = %d\n", math.MaxUint32, 0)
+	fmt.Printf("max unit64 = %d, min uint64 = %d\n", uint64(math.MaxUint64), 0)
+	//fmt.Printf("%d \n", math.MaxUint)
+	fmt.Printf("%T", a)
+
+	//var f
+
 }
