@@ -10,19 +10,11 @@ type person struct {
 
 func main() {
 
-	var david = person{
-		firstName: "David",
-		lastName:  "Ulicny",
-		age:       45}
-	var davidP = &person{
-		firstName: "David",
-		lastName:  "Ulicny",
-		age:       45}
-	p := new(person)
+	david, davidP, p := initialization()
+	// p is zeroed, we need to initialize manually
 	p.lastName = "last_name"
 	p.firstName = "first_name"
 	p.age = 20
-	fmt.Println(p)
 	//Equal
 	fmt.Println(david == *davidP)
 
@@ -42,6 +34,28 @@ func main() {
 	alice.lastName = "Wonderland"
 	alice.age = 18
 	fmt.Println(alice)
+}
+
+func initialization() (person, *person, *person) {
+	// Initialize as composite literal
+	var david = person{
+		firstName: "David",
+		lastName:  "Ulicny",
+		age:       45}
+
+	// pointer to person
+	var davidP = &person{
+		firstName: "David",
+		lastName:  "Ulicny",
+		age:       45}
+
+	// with new function
+	// allocates memory a zeroes every field
+	p := new(person)
+
+	fmt.Printf("First Name = %s, Last Name = %s, Age = %d\n", p.firstName, p.lastName, p.age)
+
+	return david, davidP, p
 }
 
 func f(p person) {
