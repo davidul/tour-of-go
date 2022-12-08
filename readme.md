@@ -31,3 +31,9 @@ Declare and initialize
 ```go
 var y = [2]int{3, 5}
 ```
+
+Infer the length of an array
+
+```go
+var z = [...]int{3, 5}
+```

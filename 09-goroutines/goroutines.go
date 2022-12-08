@@ -8,6 +8,9 @@ import (
 
 func main() {
 
+	simple()
+	pubSub()
+
 	go mul(2, 2)
 
 	go func(x int) {
