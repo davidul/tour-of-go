@@ -8,8 +8,8 @@ import (
 
 func main() {
 
-	simple()
-	pubSub()
+	//simple()
+	//pubSub()
 
 	go mul(2, 2)
 
@@ -21,6 +21,7 @@ func main() {
 	fmt.Println("Done!")
 
 	c := make(chan int, 1)
+
 	go func(c chan int) {
 		writeToChannel(c, 9)
 	}(c)

@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type person struct {
 	firstName string
@@ -10,6 +12,8 @@ type person struct {
 
 func main() {
 
+	var i interface{} = "abc"
+	fmt.Println(i)
 	david, davidP, p := initialization()
 	// p is zeroed, we need to initialize manually
 	p.lastName = "last_name"

@@ -3,7 +3,9 @@ package main
 import "fmt"
 
 func main() {
-
+	var hh []int
+	hh = make([]int, 3)
+	hh[0] = 1
 	slice()
 	fromArray()
 	resize()
