@@ -3,9 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var hh []int
-	hh = make([]int, 3)
-	hh[0] = 1
+
 	slice()
 	fromArray()
 	resize()
@@ -52,16 +50,18 @@ func slice() {
 }
 
 func fromArray() {
+	fmt.Printf("=====================\n")
+	fmt.Printf("Slice from array\n")
 	a := []byte{1, 2, 3, 4, 5}
 	s := a[1:3]
 	for i := range s {
-		fmt.Printf("%d\n", s[i])
+		fmt.Printf("Slice element %d\n", s[i])
 	}
 
 	a[1] = 4
-
+	fmt.Printf("Slice from array after change\n")
 	for i := range s {
-		fmt.Printf("%d\n", s[i])
+		fmt.Printf("Slice element %d\n", s[i])
 	}
 
 }
