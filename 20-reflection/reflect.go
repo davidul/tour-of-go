@@ -26,11 +26,7 @@ func main() {
 		age:  0,
 	}
 
-	fmt.Printf("Typeof sample = %s \n", reflect.TypeOf(sample))
-	fmt.Printf("Name = %v \n", reflect.TypeOf(sample).Name())
-	fmt.Printf("Elem = %v \n", reflect.TypeOf(sample).Elem())
-	fmt.Printf("Kind = %v \n", reflect.TypeOf(sample).Kind())
-	fmt.Printf("NumField = %v \n", reflect.TypeOf(*sample).NumField())
+	Reflect(reflect.TypeOf(sample))
 	for i := 0; i < reflect.TypeOf(*sample).NumField(); i++ {
 		field := reflect.TypeOf(*sample).Field(i)
 		fmt.Printf("Field Name %v \n", field.Name)
@@ -49,7 +45,7 @@ func main() {
 	v := reflect.ValueOf(sample2)
 	p_v := &v
 	fmt.Println(p_v.Kind())
-	fmt.Println(v.Addr())
+	//fmt.Println(v.Addr())
 
 	//foo := Foo{
 	//	name:    "David",
@@ -58,6 +54,32 @@ func main() {
 
 	//bar := FooBar{age: 2}
 
+}
+
+func Reflect(p reflect.Type) {
+	fmt.Println("type of")
+
+	k := p.Kind()
+	fmt.Println("Kind", p.Kind())
+	fmt.Println("Name", p.Name())
+	fmt.Println("Elem", p.Elem())
+	if k == reflect.Struct {
+		fmt.Println("NumField", p.NumField())
+	}
+	fmt.Println("PkgPath", p.PkgPath())
+	fmt.Println("Size", p.Size())
+	fmt.Println("String", p.String())
+	fmt.Println("Align", p.Align())
+	if k == reflect.Int || k == reflect.Int8 || k == reflect.Int16 || k == reflect.Int32 || k == reflect.Int64 ||
+		k == reflect.Uint || k == reflect.Uint8 || k == reflect.Uint16 || k == reflect.Uint32 || k == reflect.Uint64 ||
+		k == reflect.Uintptr || k == reflect.Float32 || k == reflect.Float64 || k == reflect.Complex64 ||
+		k == reflect.Complex128 {
+		fmt.Println("Bits", p.Bits())
+	}
+	if k == reflect.Chan {
+		fmt.Println("Chandir", p.ChanDir())
+	}
+	//fmt.Println(p.Implements(of))
 }
 
 type Bar interface {
