@@ -64,6 +64,14 @@ Assign a value to first element of the array
 x[0] = 1
 ```
 
+Iterate an array:
+```go
+for i := 0; i < len(x); i++ {
+    fmt.Println(x[i])
+}
+```
+
+
 # 03-Slices
 Slices are like arrays but they are dynamic. There is an underlying array behind a slice.
 Slices are indexed from 0.

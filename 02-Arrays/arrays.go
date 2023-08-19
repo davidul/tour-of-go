@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
+	"github.com/common-nighthawk/go-figure"
 	"math"
 )
 
 func main() {
+	figure.NewFigure("Arrays", "", true).Print()
 	var x [2]int           //declare array of two elements
 	var y = [2]int{3, 5}   //declare and initialize
 	var z = [...]int{3, 5} //length is inferred
@@ -27,8 +29,13 @@ func main() {
 	max[12345] = 100
 
 	fmt.Printf("%d\n", max[0])
+
+	show(x[:])
 }
 
 func show(a []int) {
-
+	for i := 0; i < len(a); i++ {
+		fmt.Printf("%d ", a[i])
+	}
+	fmt.Printf("\n")
 }

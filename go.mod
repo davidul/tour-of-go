@@ -6,6 +6,7 @@ require github.com/docker/docker v20.10.10+incompatible
 
 require (
 	github.com/Microsoft/go-winio v0.4.17 // indirect
+	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be // indirect
 	github.com/containerd/containerd v1.5.7 // indirect
 	github.com/docker/distribution v2.7.1+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect

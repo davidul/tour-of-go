@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/common-nighthawk/go-figure"
+)
 
 func main() {
 
+	figure.NewFigure("Slices", "", true).Print()
 	slice()
 	fromArray()
 	resize()
@@ -46,7 +50,6 @@ func slice() {
 	bytes := make([]byte, 5, 5)
 	fmt.Printf("Len %d Cap %d \n", len(bytes), cap(bytes))
 	bytes[0] = 1
-
 }
 
 func fromArray() {
