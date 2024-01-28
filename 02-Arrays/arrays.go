@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/common-nighthawk/go-figure"
 	"math"
+	"reflect"
 )
 
 func main() {
@@ -30,10 +31,24 @@ func main() {
 
 	fmt.Printf("%d\n", max[0])
 
-	show(x[:])
+	fmt.Println("type of x is")
+
+	of := reflect.TypeOf(x)
+	fmt.Println(of)
+	fmt.Println(of.Kind())
+	fmt.Println(of.Name())
+	fmt.Println(of.PkgPath())
+	fmt.Println(of.Size())
+	fmt.Println(of.String())
+	fmt.Println(of.Align())
+	fmt.Println(of.Bits())
+	fmt.Println(of.ChanDir())
+	fmt.Println(of.Implements(of))
+
+	show(x)
 }
 
-func show(a []int) {
+func show(a [2]int) {
 	for i := 0; i < len(a); i++ {
 		fmt.Printf("%d ", a[i])
 	}

@@ -184,5 +184,23 @@ Function can be pass as a parameter to another function.
 func add(x int, y int) int {
     return x + y
 }
+```
+
+
+Return type can be omitted if all return parameters are named.
+```go
+func add(x int, y int) (result int) {
+    result = x + y
+    return
+}
+```
+
+Multiple return values
+```go
+func add(x int, y int) (int, int) {
+    return x + y, x - y
+}
+```
+
 
 
