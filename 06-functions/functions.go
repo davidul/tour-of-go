@@ -19,6 +19,12 @@ func main() {
 		return a*a + b*b
 	}, 1, 2))
 
+	fmt.Println(add2(func(a interface{}, b interface{}) int {
+		a1 := a.(int)
+		b1 := b.(int)
+		return a1 + b1
+	}, 1, 1))
+
 }
 
 func mul(a int, b int) int {
@@ -39,5 +45,9 @@ func plusMinus(a int, b int) (int, int) {
 }
 
 func add(adder func(a int, b int) int, a int, b int) int {
+	return adder(a, b)
+}
+
+func add2(adder func(a interface{}, b interface{}) int, a int, b int) int {
 	return adder(a, b)
 }

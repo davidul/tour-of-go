@@ -186,6 +186,15 @@ func add(x int, y int) int {
 }
 ```
 
+```go
+func add2(adder func(a interface{}, b interface{}) int, 
+	a int, b int) int {
+	return adder(a, b)
+}
+
+add2(add, 1, 2)
+```
+
 
 Return type can be omitted if all return parameters are named.
 ```go
