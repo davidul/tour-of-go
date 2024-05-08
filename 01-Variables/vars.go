@@ -14,12 +14,14 @@ func main() {
 	var bv bool     //false
 	var s string    //empty string
 	fmt.Println("=== Default values ===")
-	fmt.Printf("%v %v %v %v %q\n", y, f32, f64, bv, s)
+	fmt.Printf("int: %v, float32:%v, float64:%v, bool:%v string:%q\n", y, f32, f64, bv, s)
 	fmt.Println("======================")
 	var x int = 10 //declare and initialize
+	x++
+
 	var e, f, g int = 4, 4, 4
 	z := 1 //declare, initialize and infer type
-	fmt.Printf("%d %d %d %d %d \n", x, e, f, g, z)
+	fmt.Printf("x:%d e:%d f:%d g:%d z:%d \n", x, e, f, g, z)
 	h, i := 10, "Hello" //infer different types
 	fmt.Printf("%d %s \n", h, i)
 	y = 2

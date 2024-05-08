@@ -2,8 +2,9 @@
 [01-Variables](#01-Variables)  
 [02-Arrays](#02-Arrays)  
 [03-Slices](#03-Slices)  
-[04-Loops](#04-Loops)
+[04-Loops](#04-Loops) 
 [05-Functions](#05-Functions)
+
 
 - Golang is statically typed language. 
 - It is compiled language. 
@@ -35,6 +36,17 @@ var x = 10
 You can also omit the `var` keyword and use `:=`
 ```go
 x := 10
+```
+
+Default values:
+```go
+var y int       //0
+	var f32 float32 //0
+	var f64 float64 //0
+	var bv bool     //false
+	var s string    //empty string
+	fmt.Println("=== Default values ===")
+	fmt.Printf("%v %v %v %v %q\n", y, f32, f64, bv, s)
 ```
 
 # 02-Arrays

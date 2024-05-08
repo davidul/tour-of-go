@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+// Sample private struct
+// All fields are also private
 type person struct {
 	firstName string
 	lastName  string

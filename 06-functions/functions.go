@@ -25,6 +25,15 @@ func main() {
 		return a1 + b1
 	}, 1, 1))
 
+	//prints the address of function
+	fmt.Println(helloHighOrder())
+	//executes the function
+	fmt.Println(helloHighOrder()())
+	fmt.Println(helloHighOrderWithParam("David")())
+	fmt.Println(helloHighOrderWithParam2("David")("Welcome"))
+	helloJoseph := helloHighOrderWithParam2("Joseph")
+	fmt.Println(helloJoseph("Hola"))
+
 }
 
 func mul(a int, b int) int {
